@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require_relative './lib/travel_tips'
+require './lib/travel_tips'
 
 
-CLI.new.run
+TravelTips::CLI.new.run
