@@ -1,8 +1,14 @@
 #!/usr/bin/env ruby
 
+require "nokogiri"
+require "pry"
+require 'open-uri'
+
 require "bundler"
 require "bundler/setup"
 require './lib/travel_tips'
+
+TravelTips::Scraper.new.get_file
 
 # You can add fixtures and/or initialization code here to make experimenting
 # with your gem easier. You can also use a different console, if you like.
