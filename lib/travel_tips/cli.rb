@@ -1,12 +1,10 @@
-
 module TravelTips
   class CLI
-  attr_reader :spots
+  attr_reader :places
 
     def run
         welcome
         menu
-        goodbye
 
     end
 
@@ -17,14 +15,14 @@ module TravelTips
         puts "Staycations are the best vacations!"
         exit
       elsif answer=="Y"
-        spots
+        places
       else
         puts "Im not sure what you mean by that. Try selecting (Y/N)."
       end
     end
 
-    def spots
-      @spots=TravelTips::Spots.all_with_index
+    def places
+      @places=Spots.all
     end
 
     def menu
@@ -32,19 +30,20 @@ module TravelTips
       while input != "exit"
       puts "Enter the number of the destination you would like to learn more about or type list for the full list:"
       input=gets.chomp
-        if input!="list" && input.to_i>0 && input>to_i<=20
-          puts @spots[input.to_i-1]
-        elsif input="list"
-          @spots
+        if input!="list" && input.to_i>0 && input.to_i<=20
+          puts @places[(input.to_i)-1]
+        elsif input=="list"
+          places
+        elsif input == "exit"
+          puts ""
         else
-          puts "Not sure what you mean, please pick a number or list."
+          puts "Not sure what you mean, please pick a number off the list or type list to see all places."
+          puts ""
         end
       end
+      puts "Go book your trip!"
     end
 
-    def goodbye
-      puts "Go book your Fall trip!!"
-    end
 
   end
 end

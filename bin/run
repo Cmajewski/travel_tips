@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
-require './lib/travel_tips/cli'
+require './lib/travel_tips'
+require "pry"
 
 
 TravelTips::CLI.new.run
