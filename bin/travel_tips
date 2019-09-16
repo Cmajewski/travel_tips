@@ -2,4 +2,4 @@
 
 require "bundler"
 require "bundler/setup"
-require './lib/travel_tips'
+require 'travel_tips'
