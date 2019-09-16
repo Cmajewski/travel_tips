@@ -1,3 +1,2 @@
-
-class scraper
+class Scraper
 end

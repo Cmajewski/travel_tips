@@ -1,5 +1,6 @@
 
 class TravelTips::CLI
+  attr_reader :spots
   def run
       welcome
       menu
@@ -21,11 +22,7 @@ class TravelTips::CLI
   end
 
   def spots
-    puts "
-    1. maine
-    2. RI
-    3. texas
-    4. cali"
+    @spots=Spots.all_with_index
   end
 
   def menu
@@ -47,6 +44,6 @@ class TravelTips::CLI
   end
 
   def goodbye
-    "Go book your Fall trip!!"
+    puts "Go book your Fall trip!!"
   end
 end
