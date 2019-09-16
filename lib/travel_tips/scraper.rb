@@ -1,2 +1,3 @@
-require 'open-uri'
-require 'pry'
+
+class scraper
+end
